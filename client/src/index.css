@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Plus+Jakarta+Sans:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3rem !important;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
