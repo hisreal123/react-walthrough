@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 
 const Register: React.FC = () => {
@@ -39,7 +39,7 @@ const Register: React.FC = () => {
     } catch (error) {
       setIsLoading(false);
 
-      if (error?.response?.status === 409) {
+      if ((error as AxiosError)?.response?.status === 409) {
         toast.error("Username already exists!");
       }
       console.log("Error Registering ", error);
