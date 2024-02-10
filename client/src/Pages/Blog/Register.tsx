@@ -9,7 +9,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const baseURL = process.env.API_KEY;
+  const baseURL = import.meta.env.VITE_API_KEY;
 
   const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const Register: React.FC = () => {
     };
 
     try {
-      await axios.post(baseURL, data, {
+      await axios.post(`${baseURL}/register`, data, {
         headers: { "Content-Type": "application/json" },
       });
       // const res = await axios.post(baseURL, data, {

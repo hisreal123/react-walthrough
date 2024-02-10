@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [redirect, setRedirect] = useState<boolean>(false);
 
-  const baseURL = "http://localhost:5000/login";
+  const baseURL = import.meta.env.VITE_API_KEY;
 
   const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
     };
 
     try {
-      const res = await axios.post(baseURL, data, {
+      const res = await axios.post(`${baseURL}/login`, data, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });
