@@ -6,7 +6,12 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 // require('dotenv').config
 const app = express();
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://p-rjs.vercel.app/"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const PORT = 5000;
