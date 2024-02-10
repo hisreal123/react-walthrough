@@ -4,7 +4,7 @@ const User = require("./models/User");
 const { mongoose } = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+// require('dotenv').config
 const app = express();
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
@@ -14,11 +14,11 @@ const PORT = 5000;
 const salt = bcrypt.genSaltSync(10);
 const secret = "dosndosnndonsdinosndonson3non";
 
-const uri =
+const URL =
   "mongodb+srv://blog:XreRHy0Ja3FC05Hw@cluster0.z2ujdbw.mongodb.net/dbName";
 
 mongoose
-  .connect(uri)
+  .connect(URL)
   .then(() => {
     console.log("Database connected !!!");
   })
