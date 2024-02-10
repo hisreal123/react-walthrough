@@ -9,7 +9,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const baseURL = "http://localhost:5000/register";
+  const baseURL = process.env.API_KEY;
 
   const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
