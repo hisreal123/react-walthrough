@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://p-rjs.vercel.app/"],
+    origin: ["http://localhost:5173", "https://p-rjs.vercel.app"],
     credentials: true,
   })
 );
