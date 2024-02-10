@@ -58,7 +58,8 @@ const Login: React.FC = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="flex min-h-screen bg-primary  items-center justify-center">
+      <div className="flex flex-col min-h-screen bg-primary  items-center justify-center">
+        <h1 className=""> Login </h1>
         <form
           className="flex flex-col space-y-3"
           onSubmit={register}

@@ -1,4 +1,4 @@
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+export const FullRouting = `// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import NotFound from "./Pages/Documents/NotFound";
 import Welcome from "./Pages/Documents/Welcome";
@@ -36,3 +36,4 @@ function App() {
 }
 
 export default App;
+`;

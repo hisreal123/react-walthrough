@@ -1,5 +1,5 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Link } from "react-router-dom";
+import AllSyntax from "../../components/AllSyntax";
 
 const DataBinding = () => {
   const code = ` 
@@ -46,13 +46,7 @@ export default App;`;
           types into this input field, the current value of the input will be
           updated in the state of the parent component. This way, any changes
           made by the user directly affect the state of the application.
-          <SyntaxHighlighter
-            language="jsx"
-            style={atomOneDark}
-            className="text-xs md:text-sms rounded-md border border-black/50 my-3"
-          >
-            {code}
-          </SyntaxHighlighter>
+          <AllSyntax code={code} />
           In this example, the value of the input is controlled by the state
           variable <i>name</i>. The onChange handler updates the state variable
           with the user's input. It's important to note that when you use
@@ -85,7 +79,7 @@ export default App;`;
         <span className="font-bold block my-3">
           There are three types of data binding in AngularJS:
         </span>
-        <p className="leading-loose mb-3">
+        <div className="leading-loose mb-3">
           <ul className="text-secondary">
             <li>
               <b>One-way data binding</b>: In this type of data binding, changes
@@ -100,7 +94,7 @@ export default App;`;
           Event data binding: In this type of data binding, changes in the model
           are reflected in the view, and changes in the view are reflected in
           the model. This is achieved using the ng-change directive.
-        </p>
+        </div>
 
         <p className="leading-loose my-5">
           Read more about Angular data binding{" "}
@@ -112,12 +106,12 @@ export default App;`;
           >
             Angular two-way-binding
           </a>
-          <a
+          <Link
             className="text-blue-800 font-bold"
-            href="https://angularcheatsheet.com/data-binding/"
+            to="https://angularcheatsheet.com/data-binding/"
           >
             Angular data-binding
-          </a>
+          </Link>
         </div>
       </div>
     </div>
