@@ -26,11 +26,6 @@ const Login: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });
-      // const res = await axios.post(baseURL, data, {
-      //   headers: { "Content-Type": "application/json" },
-      // });
-
-      setIsLoading(false);
 
       toast.success("Login Successful!");
       setUsername("");
@@ -38,6 +33,7 @@ const Login: React.FC = () => {
       console.log("Login Successful!", res.data);
 
       if (res.status === 200) {
+        
         setRedirect(true);
       } else {
         toast.error(" Wrong credentials !!");

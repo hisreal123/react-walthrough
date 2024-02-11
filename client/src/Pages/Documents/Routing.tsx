@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FullRouting } from "../../components/AllCodes";
 import AllSyntax from "../../components/AllSyntax";
 
@@ -79,9 +80,74 @@ const Routing = () => {
               <b>Full Example </b>:
               <AllSyntax code={FullRouting} />
             </li>
+            <li className="my-3">
+              <b>Explanation:</b>
+              <br />
+
+              <span className="my-2 block">
+                <b>{"`<BrowserRouter>`"}</b>
+                This is a component provided by React Router that wraps our
+                entire application and enables routing functionality in our
+                React application.
+              </span>
+
+              <span className="my-2 block">
+                <b>{"`<Routes>`"}</b>
+                This is another component provided by React Router that defines
+                the routes for our application. Inside <b>{"`<Routes>`"}</b>, we
+                specify all the routes available in our application.
+              </span>
+
+              <span className="my-2 block">
+                <b>{'`path="/"`'}</b>
+                This attribute specifies the URL path for the current route. For
+                example,
+                <b>{' `<Route path="/data-binding">`'}</b>means that this route
+                will be active when the URL path matches{" "}
+                <b>{"`/data-binding`"}</b>.
+              </span>
+
+              <span className="my-2 block">
+                <b>{"`element={<Layout />}`"}</b>
+                This attribute specifies the component to render when the route
+                matches. For example,{" "}
+                <b>{"`<Route element={<Welcome />} />`"}</b> means that when the
+                URL path matches the current route, the <b>{"`<Welcome />`"}</b>{" "}
+                component will be rendered inside the <b>{"`<Layout />`"}</b>{" "}
+                component.
+              </span>
+
+              <span className="my-2 block">
+                <b>{"`<Route index>`"}</b>
+                This attribute specifies that the current route is the default
+                route when no specific path matches. For example,{" "}
+                <b>{"`<Route index element={<Welcome />} />`"}</b>
+                means that when the URL path is <b>{"`/`"}</b>, the{" "}
+                <b>{"`<Welcome />`"}</b> component will be rendered inside the{" "}
+                <b>{"`<Layout />`"}</b> component.
+              </span>
+
+              <span className="my-2 block">
+                <b>{'`<Route path="*">`'}</b>
+                This is a catch-all route that matches any URL path that hasn't
+                been matched by other routes. It's typically used to render a
+                "Not Found" component when the user navigates to a URL that
+                doesn't exist in our application.
+              </span>
+            </li>
           </ul>
         </div>
       </div>
+
+      <span className="text-xs text-blue-500 hover:text-blue-800 font-bold">
+        Refrence:
+        <Link
+          className="text-blue-500 hover:text-blue-800 font-bold"
+          to="https://medium.com/the-andela-way/understanding-the-fundamentals-of-routing-in-react-b29f806b157e"
+        >
+          https://medium.com/the-andela-way/understanding-the-fundamentals-of-routing-in-react-b29f806b157e
+        </Link>
+      </span>
     </div>
   );
 };

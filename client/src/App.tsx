@@ -11,6 +11,7 @@ import Login from "./Pages/Blog/Login";
 import Register from "./Pages/Blog/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Blog/Home";
+import Components from "./Pages/Documents/Components";
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Welcome />} />
-          <Route path="data-binding" element={<DataBinding />} />
           <Route path="react" element={<React />} />
+          <Route path="components" element={<Components />} />
+          <Route path="data-binding" element={<DataBinding />} />
           <Route path="routing" element={<Routing />} />
           <Route path="credits" element={<Credits />} />
           <Route path="*" element={<NotFound />} />

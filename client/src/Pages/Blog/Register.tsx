@@ -1,13 +1,14 @@
 import axios, { AxiosError } from "axios";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Loading from "../../components/Loading";
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [redirect, setRedirect] = useState<boolean>(false);
 
   const baseURL = import.meta.env.VITE_API_KEY;
 
@@ -21,21 +22,21 @@ const Register: React.FC = () => {
     };
 
     try {
-      await axios.post(`${baseURL}/register`, data, {
+      const res = await axios.post(`${baseURL}/register`, data, {
         headers: { "Content-Type": "application/json" },
       });
-      // const res = await axios.post(baseURL, data, {
-      //   headers: { "Content-Type": "application/json" },
-      // });
 
       setIsLoading(false);
 
       toast.success("Registration Successful!");
       setUsername("");
       setPassword("");
-      // console.log("Login Successful!", res.data);
 
-      // Navigate("/blog");
+      if (res.status === 200) {
+        setRedirect(true);
+      } else {
+        toast.error(" Wrong credentials !!");
+      }
     } catch (error) {
       setIsLoading(false);
 
@@ -45,6 +46,10 @@ const Register: React.FC = () => {
       console.log("Error Registering ", error);
     }
   };
+
+  if (redirect) {
+    return <Navigate to={"/blog"} />;
+  }
 
   return (
     <>
