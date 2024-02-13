@@ -26,21 +26,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-//  <div className="wrapper flex e items-center  py-2 px-3">
-//    <div className="profile_image_wrapper">
-//      <img src="" alt="profle_image" />
-//    </div>
-
-//    <div className="input">
-//      <input
-//        type="text"
-//        placeholder="What's on your mind?"
-//        className="outline-none"
-//      />
-//    </div>
-
-//    <div className="input">
-//      <input type="file" accept="*" className="" />
-//    </div>
-//  </div>;
